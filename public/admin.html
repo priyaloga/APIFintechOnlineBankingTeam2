@@ -1,0 +1,119 @@
+<link rel="stylesheet" type="text/css" href="admin.css">
+<link rel="stylesheet" type="text/css" href="signup.css">
+<div class="topcorner">
+  <p>
+  <a href="/">
+  <img border="0" alt="W3Schools" src="icone-sair.png" width="100" height="100">
+  </a>
+  </p></div>
+<div class="search" ng-show="accountshow">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+ <br>
+ <h2><center><font color="white">ADMIN</center></h2></font>
+  <center><input type="text" placeholder="enter account no" ng-model="accSearch" size="50%"><br><br>
+    <br>
+  <button type="button" class="btn-success" ng-model="find" ng-click="accfind(accSearch)">Search</button>
+
+  <table  border="3" class="usertable" ng-show="userdetailshow">
+      <th>ACCOUNTNO</th>
+      <th>USERNAME</th>
+      <th>CONTACT NUMBER</th>
+      <th>EMAIL</th>
+      <th>IFSC</th>
+      <th>BRANCH</th>
+      <th>INITIAL AMOUNT</th>
+      <th>CURRENT BALANCE</th>
+
+
+      <tr ng-repeat="x in names" >
+
+
+
+          <td>{{x.accountnum}}</td>
+
+          <td>{{x.username}}</td>
+
+          <td>{{x.mobile}}</td>
+
+          <td>{{x.email}}</td>
+
+          <td>{{x.IFSC}}</td>
+
+          <td>{{x.branch}}</td>
+
+          <td>{{x.initial_amt}}</td>
+
+          <td>{{x.balance}}</td>
+
+
+
+
+      </tr>
+
+  </table>
+
+  <table  border="3" class="admintable" ng-show="show">
+      <th>ACCOUNTNO</th>
+      <th>USERNAME</th>
+      <th>IFSC</th>
+
+
+
+      <tr>
+
+
+          <td>{{accountnum}}</td>
+
+
+          <td>{{username}}</td>
+
+          <td>{{IFSC}}</td>
+
+
+      </tr>
+
+  </table>
+  <div class="depositbutton" ng-show="buttonshow">
+    <br><br>
+    <!--<button type="button" class="btn-success" ng-model="buttondeposit" ng-click="deposit()">Deposit</button>!-->
+    <button type="button" class="btn-success" ng-model="buttondelete" ng-click="remove()">remove user</button>
+    <input type="button" value="Back"  class="btn-success" onClick="history.go(-1);return true;"></center>
+
+  </div>
+  </div>
+  <!--<form name="signupForm">
+      <div class="signup-form" ng-show='depositshow'>
+          <h2>DEPOSIT
+          </h2>
+
+         <select ng-model="acctype" placeholder="accounttype" >
+              <option value="0">Saving Account</option>
+              <option value="1">Current Account</option>
+          </select>
+          <input type="text" placeholder="ACCOUNTNO" style="text-align: center" ng-model="ID" name="username" required><br><br>
+          <input type="text" placeholder="CURRENCY" ng-model="currency" required><br><br>
+          <input type="text" placeholder="BRANCH" ng-model="branch" required><br><br>
+          <input type="text" placeholder="AMOUNT" ng-model="amount" required><br><br>
+
+          <div style="text-align: center">
+              <input type="button" value="deposit" ng-model="submittransfer"class="btn-success" ng-disabled="signupForm.$invalid" ng-click="submitdeposit()">
+          </div>
+
+      </div>
+  </form>!-->
+
+  </body>
+  </html>

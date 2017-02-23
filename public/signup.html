@@ -1,0 +1,168 @@
+<html>
+<head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="login.css">
+  <style>
+  .jumbotron {
+
+    background-image: url("title.png") ;
+    background-size:cover;
+  background-repeat: no-repeat;
+     padding: 85px 20px;
+    }
+  /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .topcorner{
+  position:absolute;
+  bottom: :0;
+  right:-5;
+
+  }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+      margin-top: -30px;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+      .bigHeaderLogo {
+    height: 250px auto !important;
+    width: 300px !important;
+    margin-top: -12px;
+  }
+
+    }
+
+</style>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img class="bigHeaderLogo" src="logo.png" alt="VirtusaPolaris"></a></div>
+      </div>
+      <div ng-show="currentUser">
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li> <a href="/accountsummary"> ACCOUNT SUMMARY</a></li>
+          <li>  <a href="/transfer">TRANSACTION</a></li>
+          <li>   <a href="/addpayee">ADDPAYEE</a></li>
+          <li>   <a href="/adddeposit">DEPOSIT</a></li>
+          <li>   <a href="/reset">CHANGE PASSWORD</a></li>
+          <li>    <a href ng-click="logout()">LOGOUT</a></li>
+
+              </div>
+  </ul></div></div></nav>
+  <div class="jumbotron text-center">
+    <marquee direction="left"><h2><b><font color="silver">ONLINE BANKING </font></b></h2>
+    <p><br><br><br></p></marquee>
+  </div>
+  <div class="container-fluid text-center">
+    <div class="row content">
+      <div class="col-sm-3 sidenav">
+        <h1>Welcome</h1>
+
+    <p>About Company </p>
+
+
+  <marquee direction="up"><p>Virtusa provides a broad range of IT consulting,
+  systems implementation and application outsourcing services through
+  an optimized global delivery model.</p>
+  <p>At VirtusaPolaris, we place great emphasis on teamwork, professional and personal development and quality of life.</p>
+  <p>Our values define the core fabric of our corporate culture.</p></marquee>
+  </div>
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-3">
+  <div class="signup-form">
+
+    <div class="row vertical-offset-100">
+
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">User Register</h3>
+			 	</div>
+        <div class="panel-body">
+  <form name="signupForm" role="form">
+    <fieldset>
+    			    	  	<div class="form-group">
+<input class="form-control" type="text" placeholder="username" ng-model="username" name="username" required>
+</div>
+
+<div class="form-group">
+<input class="form-control" type="email" placeholder="email id" ng-model="email" required>
+</div>
+
+<div class="form-group">
+<input class="form-control" type="text" placeholder="contact number" ng-model="mobile" required>
+</div>
+
+<div class="form-group">
+<input class="form-control" type="password" placeholder="password" ng-model="password" required>
+</div>
+
+<div class="form-group">
+<input class="form-control" type="text" placeholder="initial amount" ng-model="initial_amt">
+</div>
+
+<div style="text-align: center">
+  <input type="button" value="Register" ng-model="signin"class="btn btn-warning" ng-disabled="signupForm.$invalid" ng-click="submitSignup()">
+<input type="button" value="Back"  class="btn btn-warning" onClick="history.go(-1);return true;">
+</div>
+	</fieldset>
+</form>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="col-sm-1">
+</div>
+
+<div class="col-sm-2 sidenav">
+ <img src="Capture.PNG"  height="420" width="400">
+</div>
+
+</div>
+</div>
+<footer class="container-fluid text-center">
+  <a href="#mypage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Team by <a href="https://www.virtusapolaris.com" title="virtusa|polaris">www.virtusapolaris.com</a></p>
+</footer>
+</body>
+</html>

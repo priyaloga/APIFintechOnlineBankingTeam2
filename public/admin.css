@@ -1,0 +1,17 @@
+
+body{  background-image: url("security-compressor.jpg");
+background-size:cover;    }
+
+
+.admintable{
+  background-color:white;
+  height:50;
+  width:400;
+  }
+
+.topcorner{
+position:absolute;
+top:0;
+right:0;
+
+}

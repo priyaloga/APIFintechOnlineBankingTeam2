@@ -1,0 +1,17 @@
+body{
+  padding: 0;
+}
+
+.bigHeaderLogo {
+    height: 250px auto !important;
+    width: 300px !important;
+    margin-top: -11px;
+}
+.container {
+    padding: 16px;
+}
+
+.input-group-addon {
+    color: #fff;
+    background: #3276B1;
+}
