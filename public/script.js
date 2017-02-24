@@ -594,6 +594,7 @@ $scope.username='';
 $scope.password='';
 $rootScope.token=null;
 $rootScope.currentUser=null;
+$location.path('/login');
 };
 
 
@@ -631,7 +632,7 @@ alert('success');
 }
 }
 });
-app.controller('submittransferController',function($rootScope,$scope, $http, $cookies){
+app.controller('submittransferController',function($rootScope,$scope, $location,$http, $cookies){
 
 $http.get("/users").then(function(response) {
 {
@@ -832,6 +833,16 @@ console.log('beneficiary success');
 });
 
 }
+}
+
+$scope.logout=function(){
+  $cookies.remove('token');
+  $cookies.remove('currentUser');
+  $scope.username='';
+  $scope.password='';
+  $rootScope.token=null;
+  $rootScope.currentUser=null;
+  $location.path("/");
 }
 });
 
@@ -1066,7 +1077,7 @@ console.log($scope.beneficiaryacc);
   console.log('inside for');
 console.log($scope.bname[i].Accountno);
 console.log($scope.beneficiaryacc);
-  if($scope.bname[i].Accountno==$scope.beneficiaryacc)
+  if($scope.bname[i].Accountno==$scope.beneficiaryacc && $scope.bname[i].Accountno==$scope.accountholder)
   {
     console.log('beneficiary test');
 
@@ -1087,7 +1098,7 @@ console.log($scope.beneficiaryacc);
 
   if($scope.summaryDetails.length!=0){
   console.log($scope.benshow);
-  $scope.benshow=true;
+  $scope.show=true;
   $scope.showmsg=false;
 
   }
